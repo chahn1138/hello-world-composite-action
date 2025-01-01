@@ -9,7 +9,7 @@ jobs:
       - id: foo
         uses: chahn1138/hello-world-composite-action
         with:
-          who-to-greet: 'Mona the Octocat'
+          who-to-greet: 'Squeala the Octocat'
       - run: echo random-number "$RANDOM_NUMBER"
         shell: bash
         env:
