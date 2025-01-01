@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello 2
+    steps:
+      - uses: actions/checkout@v4
+      - id: bar
+        uses: chahn1138/hello-world-composite-action@651e426
+        with:
+          who-to-greet: 'Squeala the Octocat'
+      - run: echo random-number "$RANDOM_NUMBER"
+        shell: bash
+        env:
+          RANDOM_NUMBER: ${{ steps.bar.outputs.random-number }}
+
